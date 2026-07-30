@@ -15,7 +15,7 @@ class Solution:
             return lb
         
         def upperBound(nums ,target):
-            ub = -1
+            ub = n
             low,high = 0,n-1
             while low <=high:
                 mid = (low+high)//2
