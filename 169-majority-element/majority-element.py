@@ -1,8 +1,13 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         n = len(nums)
-        prefix_map = {}
+        candidate= -1
+        count = 0
         for num in nums:
-            prefix_map[num] = prefix_map.get(num,0)+1
-            if prefix_map[num] > n/2:
-                return num 
+            if count == 0:
+                candidate = num
+            if num == candidate:
+                count+= 1
+            else:
+                count-= 1
+        return candidate
